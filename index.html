@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tefnut Beach Vest - Premium Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>KOTN</h1>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Products</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13V16A1 1 0 0 0 8 17H19M9 19.5A1.5 1.5 0 1 1 12 19.5A1.5 1.5 0 0 1 9 19.5ZM20 19.5A1.5 1.5 0 1 1 23 19.5A1.5 1.5 0 0 1 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Product Section -->
+    <main class="main">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tefnut Beach Vest">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img class="thumbnail active" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Vest Front" onclick="changeMainImage(this)">
+                        <img class="thumbnail" src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Vest Back" onclick="changeMainImage(this)">
+                        <img class="thumbnail" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Vest Detail" onclick="changeMainImage(this)">
+                        <img class="thumbnail" src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Vest Lifestyle" onclick="changeMainImage(this)">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 class="product-title">Tefnut Beach Vest</h1>
+                    <p class="product-price">$89.00</p>
+                    
+                    <div class="product-description">
+                        <p>A structured staple with a crisp, weightless feel. Made from our paper-touch 100% organic cotton, the Tefnut Beach Vest is garment-dyed for a broken-in softness and rich depth of colour.</p>
+                    </div>
+
+                    <!-- Color Selector -->
+                    <div class="color-section">
+                        <h3>Color</h3>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="black" style="background-color: #000;">
+                                <span class="color-name">Black</span>
+                            </button>
+                            <button class="color-btn" data-color="white" style="background-color: #fff; border: 1px solid #ddd;">
+                                <span class="color-name">White</span>
+                            </button>
+                            <button class="color-btn" data-color="navy" style="background-color: #1e3a8a;">
+                                <span class="color-name">Navy</span>
+                            </button>
+                            <button class="color-btn" data-color="olive" style="background-color: #6b7280;">
+                                <span class="color-name">Olive</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="size-section">
+                        <h3>Size</h3>
+                        <div class="size-options">
+                            <button class="size-btn" data-size="XS">XS</button>
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn active" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="quantity-section">
+                        <h3>Quantity</h3>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQuantity()">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+
+                    <!-- Product Details -->
+                    <div class="product-details">
+                        <div class="detail-section">
+                            <h4>Product Details</h4>
+                            <ul>
+                                <li>100% organic cotton</li>
+                                <li>Garment-dyed for softness</li>
+                                <li>Two-way zip closure</li>
+                                <li>Contrast stitching details</li>
+                                <li>Flap chest pocket</li>
+                                <li>Flat-felled seams for durability</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Size & Fit</h4>
+                            <p>True to size. Model is 6'2" wearing size L.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Care Instructions</h4>
+                            <p>Machine wash cold, tumble dry low. Iron on low heat if needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Success Popup -->
+    <div class="popup" id="successPopup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h3>Added to Cart!</h3>
+            <p>Tefnut Beach Vest has been added to your cart.</p>
+            <div class="popup-actions">
+                <button class="popup-btn secondary" onclick="closePopup()">Continue Shopping</button>
+                <button class="popup-btn primary" onclick="viewCart()">View Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
